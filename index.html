@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vinicius's bakery. | bolos artesanais</title>
+    
+    <!-- Tailwind CSS (via CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/tailwind-config.js"></script>
+
+    <!-- Estilo Customizado -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#0E0805] text-brand-cream font-sans antialiased min-h-screen">
+
+    <!-- Container Centralizado (Mobile 390px-420px com espaço extra no rodapé para o dock) -->
+    <main class="max-w-[420px] mx-auto min-h-screen bg-brand-bg px-5 py-6 sm:py-8 pb-32 shadow-2xl flex flex-col justify-between relative">
+        
+        <!-- Header da Marca -->
+        <header class="space-y-4">
+            <div class="flex items-center justify-between">
+                <span class="text-[10px] tracking-widest uppercase font-semibold text-brand-accent/80">
+                    CONFEITARIA ARTESANAL
+                </span>
+                <span class="w-2 h-2 rounded-full bg-brand-terracota animate-pulse"></span>
+            </div>
+
+            <div>
+                <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white leading-none">
+                    vinicius's<br>bakery.
+                </h1>
+                <p class="text-xs sm:text-sm text-brand-muted mt-2 font-normal">
+                    bolos artesanais & fornadas do dia
+                </p>
+            </div>
+
+            <hr class="border-brand-card-border/60">
+
+            <div class="bg-brand-pill border border-brand-card-border py-2.5 px-4 rounded-full flex items-center gap-2.5">
+                <span class="w-2 h-2 rounded-full bg-brand-terracota shrink-0"></span>
+                <p class="text-xs sm:text-sm text-brand-cream font-medium">
+                    Encomendas abertas para o café da tarde
+                </p>
+            </div>
+        </header>
+
+        <!-- Seção do Cardápio -->
+        <section class="mt-8 mb-6">
+            <div class="flex items-center justify-between mb-4">
+                <span class="text-xs tracking-widest font-extrabold text-brand-accent uppercase">
+                    CARDÁPIO
+                </span>
+                <span id="items-count" class="text-xs font-mono text-brand-muted">
+                    05 itens
+                </span>
+            </div>
+
+            <!-- Cards Injetados via js/script.js -->
+            <div id="menu-list" class="space-y-5"></div>
+        </section>
+
+        <!-- Rodapé Minimalista -->
+        <footer class="pt-6 border-t border-brand-card-border/60 text-center space-y-2 pb-4">
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-brand-terracota"></span>
+            <p class="text-[11px] font-bold tracking-widest uppercase text-brand-accent">
+                PRODUÇÃO LIMITADA SOB ENCOMENDA
+            </p>
+            <p class="text-[10px] tracking-wider uppercase text-brand-muted/70">
+                FEITO EM PEQUENAS FORNADAS
+            </p>
+        </footer>
+
+    </main>
+
+    <!-- Barra Fixa de Finalização (Aparece automaticamente ao selecionar itens) -->
+    <div id="checkout-bar" class="fixed bottom-0 left-0 right-0 z-50 p-4 pointer-events-none transition-all duration-300 ease-out transform translate-y-full opacity-0">
+        <div class="max-w-[420px] mx-auto bg-[#1C120C]/95 backdrop-blur-md border border-brand-terracota/40 rounded-2xl p-4 shadow-2xl flex items-center justify-between pointer-events-auto">
+            <div>
+                <span id="cart-total-qty" class="text-xs font-semibold text-brand-accent block">0 bolos</span>
+                <span id="cart-total-price" class="text-lg font-extrabold text-brand-cream">R$ 0,00</span>
+            </div>
+            <button 
+                onclick="handleCheckout()" 
+                class="bg-brand-terracota hover:bg-brand-terracota-dark active:scale-[0.98] text-[#160E08] font-extrabold text-sm py-3 px-5 rounded-xl flex items-center gap-2 shadow-lg transition-all"
+            >
+                <span>Pedir no WhatsApp</span>
+                <span class="text-base">↗</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Script de Negócio -->
+    <script src="js/script.js"></script>
+</body>
+</html>
