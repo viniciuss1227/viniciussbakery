@@ -24,7 +24,7 @@ const catalog = [
         id: "03",
         nome: "Fubá Tradicional",
         preco: 25.00,
-        descricao: "Receita clássica caseira: macio, aromático e com toque suave de erva-doce.",
+        descricao: "Receita clássica da casa: massa macia, leve e dourada, com o sabor puro e acolhedor.",
         imagem: "assets/fuba-cake.jpg"
     },
     {
